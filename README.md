@@ -61,8 +61,7 @@ Extracts year-month from ship date for grouping, then calculates month-on-month 
 
 <img width="1028" height="434" alt="Screenshot 2026-03-28 195026" src="https://github.com/user-attachments/assets/d6bf0cfe-8ac8-4ba2-8ce0-53698065230b" />
 
-**Techniques:** DATE![Uploading Screenshot 2026-03-28 195026.png…]()
- functions · TO_CHAR · LAG / LEAD · Conditional CASE WHEN trend classification
+**Techniques:** DATE()functions · TO_CHAR · LAG / LEAD · Conditional CASE WHEN trend classification
 
 ---
 
