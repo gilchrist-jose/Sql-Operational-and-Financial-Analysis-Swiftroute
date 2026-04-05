@@ -36,7 +36,7 @@ CREATE TABLE charges (
 	PRIMARY KEY (shipment_id,charge_type)
 );
 
-—- What is the on-time delivery rate by carrier  —-
+---- What is the on-time delivery rate by carrier  ----
 
 WITH difference AS (
 SELECT 
@@ -68,7 +68,7 @@ JOIN carriers
 USING (carrier_id)
 ORDER BY on_time_pct DESC;
 
-—- What is the on-time delivery rate by corridor —-
+---- What is the on-time delivery rate by corridor ----
 
 WITH difference AS (
 SELECT 
@@ -96,7 +96,7 @@ SELECT
 	ROUND((on_time_deliveries*100.0/total_deliveries),2) AS on_time_pct
 FROM on_time_deliveries;
 
-—- How has monthly shipment volume and revenue trended across the year —-
+---- How has monthly shipment volume and revenue trended across the year ----
 
 WITH part1 AS (
 SELECT
@@ -151,7 +151,7 @@ SELECT
 	END AS revenue_trend
 FROM part4;
 
-—- Which shipments are delayed and by how many days —-
+---- Which shipments are delayed and by how many days ----
 
 WITH part1 AS (
 SELECT 
@@ -181,7 +181,7 @@ SELECT
 FROM part1
 ORDER BY delay_time;
 
-—- How does each carrier's average transit time compare month on month —-
+---- How does each carrier's average transit time compare month on month ----
 
 WITH part1 AS (
     SELECT 
@@ -226,7 +226,7 @@ FROM part3
 JOIN carriers USING (carrier_id)
 ORDER BY carrier_id, "month";
 
-—- What is the total cost breakdown per shipment including all surcharges —-
+---- What is the total cost breakdown per shipment including all surcharges ----
 
 WITH part1 AS (
 SELECT 
@@ -250,7 +250,7 @@ FROM part1
 JOIN shipments
 USING(shipment_id);
 
-—- Which corridors generate the most revenue after all surcharges are included —-
+---- Which corridors generate the most revenue after all surcharges are included ----
 
 Query -
 
@@ -299,7 +299,7 @@ FROM part3
 GROUP BY corridor
 ORDER BY total_revenue DESC;
 
-—- Create a reusable carrier performance summary —-
+---- Create a reusable carrier performance summary ----
 
 Query -
 
